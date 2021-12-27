@@ -12,7 +12,7 @@ import Register from './Register';
 import InfoToolTips from './InfoToolTips';
 import api from '../utils/Api';
 import RequireAuth from './RequireAuth';
-import * as auth from '../auth';
+import * as auth from '../utils/auth';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
@@ -115,16 +115,16 @@ function App() {
       .then(res => {
         if (res.data._id) {
           setInfoToolTips(true);
-          setIsInfoToolTipsOpened(true);
           navigate('/signin')
         } else {
           setInfoToolTips(false);
-          setIsInfoToolTipsOpened(true);
         }
     })
     .catch(() => {
-      setIsInfoToolTipsOpened(true);
       setInfoToolTips(false);
+    })
+    .finally(() => {
+      setIsInfoToolTipsOpened(true);
     })
   }
   

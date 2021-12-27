@@ -10,9 +10,8 @@ function PopupWithForm({name, onPopupClick, isOpen, onClick, title, onSubmit, ch
       <form 
         name={name} 
         className="popup__form page__popup" 
-        noValidate 
         onSubmit={onSubmit}>
-        {children}
+          {children}
         <button type="submit" name="button" className="popup__submit-button">{buttonTitle}</button>
       </form>
     </div>

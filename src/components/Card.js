@@ -30,7 +30,7 @@ const cardLikeButtonClassName = `element__button ${isLiked ? 'element__button_ac
       
       <li className="element">
          <div style={{ backgroundImage: `url(${card.link})` }} 
-         alt={card.name} className="element__image" onClick={handleClick}></div>
+          className="element__image" onClick={handleClick}></div>
          <button type="button" className={cardDeleteButtonClassName} onClick={handleDeleteClick}></button>
          <div className="element__block">
           <h2 className="element__title">{card.name}</h2>
