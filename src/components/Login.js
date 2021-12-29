@@ -18,7 +18,6 @@ function Login({ onLogin }) {
   }
 
   return (
-
     <div className="login">
       <h2 className='login__title'>Вход</h2>
       <form className='login__form' onSubmit={handleSubmit}>

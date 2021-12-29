@@ -36,6 +36,8 @@ function App() {
   React.useEffect(() => {
     if(setLoggedIn(true)) { 
      navigate('/')
+    } else {
+      navigate('/signin')
     }
   }, [])
 
@@ -73,7 +75,7 @@ function App() {
             setLoggedIn(true)
             navigate('/')
           } else {
-            localStorage.removeItem('jwt')
+            //localStorage.removeItem('jwt')
             setLoggedIn(false)
             setEmail('')
           }
@@ -219,7 +221,7 @@ function App() {
         exit={handleLogout}
         email={email}/>
       <Routes>
-        <Route exact path={'/'} element={<RequireAuth
+        <Route exact path="/" element={<RequireAuth
           loggedIn={loggedIn}
           ><Main 
           onEditProfile={openProfilePopup} 
@@ -229,10 +231,10 @@ function App() {
           cards={cards}
           onCardLike={handleCardLike}
           onCardDelete={handleCardDelete}/></RequireAuth>}/>
-        <Route path="signup" element={<Register 
+        <Route path="/signup" element={<Register 
           onRegister={handleRegister}
           />}/>
-        <Route path="signin" element={<Login onLogin={handleLogin}/>}/>
+        <Route path="/signin" element={<Login onLogin={handleLogin}/>}/>
       </Routes>
     <Footer />
     <InfoToolTips 
